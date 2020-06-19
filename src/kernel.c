@@ -1,7 +1,6 @@
 #include "kernel.h"
 
 double eval_Cubic_kernel(double q, double h) {
-    double M_PI = 3.1415926535;
     double alpha = 15.0/(7.0*M_PI*h*h);
     if(q >= 0. && q <= 1.) return alpha * (2./3. - q*q + q*q*q/2.);
     else if(q > 1. && q <= 2.) return alpha * ((2-q)*(2-q)*(2-q)/6.);
@@ -23,7 +22,6 @@ double eval_kernel(xy *p1, xy *p2, double kh, Kernel kernel) {
 
 double derivative_Cubic_kernel(double q,double h)
 {
-     double M_PI = 3.1415926535;
      double alpha = 15.0/(7.0*M_PI*pow(h, 2));
      double g;
      if (q >= 0 && q <= 1)
@@ -66,7 +64,6 @@ double deriv2_Cubic_kernel(xy* p1, xy* p2, double kh, Kernel kernel) {
     double d = sqrt(d_x*d_x + d_y*d_y);
     double q = d/h;
     double g;
-    double M_PI = 3.1415926535;
     double alpha = 15.0/(7.0*M_PI*pow(h, 2));
     if (q >= 0 && q <= 1)
         g = -2. + 3.*q*q;

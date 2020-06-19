@@ -78,7 +78,6 @@ xy* map_to_circle(xy* pos_square) {
 xy* generate_circle(int k, int n, int nb, double radius) {
     double phi = (sqrt(5)+1)/2;
     double r;
-    double M_PI = 3.1415926535;
     if (k > n-nb) r = radius;
     else r = radius*sqrt(k-1/2)/sqrt(n-(nb+1)/2);
     double theta = 2*M_PI*k/(phi*phi);
